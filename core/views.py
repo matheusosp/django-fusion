@@ -1,6 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import FormView
 from django.contrib import messages
+from django.shortcuts import redirect
 
 from .forms import ContactForm
 from .models import Services, Employee, Features
@@ -26,3 +27,6 @@ class IndexView(FormView):
     def form_invalid(self, form, *args, **kwargs):
         messages.error(self.request, 'Error sent email')
         return super(IndexView, self).form_invalid(form, *args, **kwargs)
+
+def redirect_view(request):
+    return redirect('/login/')
