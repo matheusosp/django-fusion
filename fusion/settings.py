@@ -58,7 +58,7 @@ ROOT_URLCONF = 'fusion.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['core/migrations/templates'],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,6 +76,7 @@ WSGI_APPLICATION = 'fusion.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+"""
 DATABASES = {
     'default': dj_database_url.config()
 }
@@ -90,7 +91,7 @@ DATABASES = {
         'PORT': '5432'
     }
 }
-"""
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -132,13 +133,14 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+"""
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'bremensuporte1@gmail.com'
+EMAIL_HOST_USER = 'email'
 EMAIL_PORT = 465
 EMAIL_USER_TSL = True
 EMAIL_USE_SSL = True
-EMAIL_HOST_PASSWORD = '91128993'
-
+EMAIL_HOST_PASSWORD = 'password'
+"""
 LOGOUT_REDIRECT_URL = 'index'
