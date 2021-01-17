@@ -28,5 +28,6 @@ class IndexView(FormView):
         messages.error(self.request, 'Error sent email')
         return super(IndexView, self).form_invalid(form, *args, **kwargs)
 
+
 def redirect_view(request):
     return redirect('/login/')
