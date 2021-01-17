@@ -5,3 +5,5 @@ Login
 admin
 password
 admin
+
+![alt text](fusion%20–%20test_views.py.jpg)
