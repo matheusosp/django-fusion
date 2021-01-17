@@ -25,11 +25,14 @@ class Services(Base):
         ('lni-users', 'Users'),
         ('lni-layers', 'Design'),
         ('lni-mobile', 'Mobile'),
-        ('lni-rocket', 'Rocket')
+        ('lni-rocket', 'Rocket'),
+        ('lni-laptop-phone', 'Phone'),
+        ('lni-leaf', 'Leaf'),
+        ('lni-layers', 'Layers')
     }
     service = models.CharField('Service', max_length=100)
     description = models.TextField('description', max_length=200)
-    icon = models.CharField('icon', max_length=15, choices=ICON_CHOISES)
+    icon = models.CharField('icon', max_length=25, choices=ICON_CHOISES)
 
     class Meta:
         verbose_name = 'Service'
@@ -62,6 +65,30 @@ class Employee(Base):
     class Meta:
         verbose_name = 'Employee'
         verbose_name_plural = 'employees'
+
+    def __str__(self):
+        return self.name
+
+
+class Features(Base):
+    ICON_CHOISES = {
+        ('lni-cog', 'gear'),
+        ('lni-stats-up', 'Graphic'),
+        ('lni-users', 'Users'),
+        ('lni-layers', 'Design'),
+        ('lni-mobile', 'Mobile'),
+        ('lni-rocket', 'Rocket'),
+        ('lni-laptop-phone', 'Phone'),
+        ('lni-leaf', 'Leaf'),
+        ('lni-layers', 'Layers'),
+    }
+    name = models.CharField('Name', max_length=100)
+    description = models.TextField('description', max_length=200)
+    icon = models.CharField('icon', max_length=25, choices=ICON_CHOISES)
+
+    class Meta:
+        verbose_name = 'Feature'
+        verbose_name_plural = 'Features'
 
     def __str__(self):
         return self.name
