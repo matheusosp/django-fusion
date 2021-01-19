@@ -133,7 +133,7 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-"""
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 """
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -143,7 +143,7 @@ EMAIL_PORT = 465
 EMAIL_USER_TSL = True
 EMAIL_USE_SSL = True
 EMAIL_HOST_PASSWORD = 'password'
-
+"""
 LOGIN_REDIRECT_URL = 'login'
 LOGOUT_REDIRECT_URL = 'index'
 
