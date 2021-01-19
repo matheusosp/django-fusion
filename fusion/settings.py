@@ -33,8 +33,6 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'core',
-    'django_adminlte',
-    'django_adminlte_theme',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -134,7 +133,7 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
+"""
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 """
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -144,7 +143,9 @@ EMAIL_PORT = 465
 EMAIL_USER_TSL = True
 EMAIL_USE_SSL = True
 EMAIL_HOST_PASSWORD = 'password'
-"""
+
 LOGOUT_REDIRECT_URL = 'index'
 
-
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)

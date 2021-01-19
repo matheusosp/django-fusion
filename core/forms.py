@@ -1,12 +1,13 @@
 from django import forms
 from django.core.mail.message import EmailMessage
+from django.utils.translation import gettext_lazy as _
 
 
 class ContactForm(forms.Form):
-    name = forms.CharField(label='Name', max_length=100)
-    email = forms.EmailField(label='E-mail', max_length=100)
-    subject = forms.CharField(label='Subject', max_length=100)
-    message = forms.CharField(label='Message', widget=forms.Textarea())
+    name = forms.CharField(label=_('Name'), max_length=100)
+    email = forms.EmailField(label=_('E-mail'), max_length=100)
+    subject = forms.CharField(label=_('Subject'), max_length=100)
+    message = forms.CharField(label=_('Message'), widget=forms.Textarea())
 
     def send_mail(self):
         name = self.cleaned_data['name']

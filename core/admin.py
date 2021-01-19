@@ -14,7 +14,7 @@ class ServiceAdmin(admin.ModelAdmin):
 
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ['name', 'office','active', 'modified']
+    list_display = ['name', 'office', 'active', 'modified']
 
 
 @admin.register(Features)
