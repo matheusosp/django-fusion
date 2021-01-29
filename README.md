@@ -28,7 +28,7 @@ admin
 having python installed download the project and run the following commands
 
 ```
-​```shell script
+
 git clone https://github.com/matheusosp/angular-Cinema.git
 cd django-fusion
 git checkout main
@@ -36,5 +36,5 @@ pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
-​```
+
 ```
