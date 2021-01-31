@@ -28,8 +28,7 @@ admin
 having python installed download the project and run the following commands
 
 ```
-
-git clone https://github.com/matheusosp/angular-Cinema.git
+git clone git@github.com:matheusosp/django-fusion.git
 cd django-fusion
 git checkout main
 pip install -r requirements.txt
